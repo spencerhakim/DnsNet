@@ -18,6 +18,7 @@ namespace Heijden.DNS
 	 */
 	public enum Type : ushort
 	{
+		Reserved = 0,		// used as a special indicator for the SIG RR [RFC2931], [RFC4034] and in other circumstances and must never be allocated for ordinary use
 		A = 1,				// a IPV4 host address
 		NS = 2,				// an authoritative name server
 		MD = 3,				// a mail destination (Obsolete - use MX)
@@ -117,6 +118,7 @@ namespace Heijden.DNS
 	 */
 	public enum QType : ushort
 	{
+		Reserved = Type.Reserved, // used as a special indicator for the SIG RR [RFC2931], [RFC4034] and in other circumstances and must never be allocated for ordinary use
 		A = Type.A,			// a IPV4 host address
 		NS = Type.NS,		// an authoritative name server
 		MD = Type.MD,		// a mail destination (Obsolete - use MX)
@@ -219,6 +221,7 @@ namespace Heijden.DNS
 	 */
 	public enum Class : ushort
 	{
+		Reserved = 0,		// Reserved; assignment requires a Standards Action
 		IN = 1,				// the Internet
 		CS = 2,				// the CSNET class (Obsolete - used only for examples in some obsolete RFCs)
 		CH = 3,				// the CHAOS class
@@ -235,12 +238,14 @@ namespace Heijden.DNS
 	 */
 	public enum QClass : ushort
 	{
-		IN = Class.IN,		// the Internet
-		CS = Class.CS,		// the CSNET class (Obsolete - used only for examples in some obsolete RFCs)
-		CH = Class.CH,		// the CHAOS class
-		HS = Class.HS,		// Hesiod [Dyer 87]
+		Reserved = Class.Reserved,	// Reserved; assignment requires a Standards Action
+		IN = Class.IN,				// the Internet
+		CS = Class.CS,				// the CSNET class (Obsolete - used only for examples in some obsolete RFCs)
+		CH = Class.CH,				// the CHAOS class
+		HS = Class.HS,				// Hesiod [Dyer 87]
 
-		ANY = 255			// any class
+		NONE = 254,					// none, RFC2136
+		ANY = 255					// any class
 	}
 
 	/*

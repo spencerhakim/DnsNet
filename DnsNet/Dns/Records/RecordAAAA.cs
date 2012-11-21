@@ -17,7 +17,7 @@ namespace Heijden.DNS
 
 		public RecordAAAA(RecordReader rr)
 		{
-			System.Net.IPAddress.TryParse(
+			this.Address = System.Net.IPAddress.Parse(
 				string.Format("{0:x}:{1:x}:{2:x}:{3:x}:{4:x}:{5:x}:{6:x}:{7:x}",
 				rr.ReadUInt16(),
 				rr.ReadUInt16(),
@@ -26,7 +26,8 @@ namespace Heijden.DNS
 				rr.ReadUInt16(),
 				rr.ReadUInt16(),
 				rr.ReadUInt16(),
-				rr.ReadUInt16()), out this.Address);
+				rr.ReadUInt16())
+			);
 		}
 
 		public override string ToString()

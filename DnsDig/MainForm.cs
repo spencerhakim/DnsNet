@@ -140,8 +140,8 @@ namespace DnsDig
 
 		private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			AboutForm aboutForm = new AboutForm();
-			aboutForm.ShowDialog(this);
+			using( AboutForm aboutForm = new AboutForm() )
+				aboutForm.ShowDialog(this);
 		}
 
 		private void textBox3_KeyDown(object sender, KeyEventArgs e)
