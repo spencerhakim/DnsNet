@@ -51,8 +51,8 @@ namespace DnsDig
 		private void SetupComboBox(System.Type type, ComboBox comboBox)
 		{
 			Array types = Enum.GetValues(type);
-			for (int intI = 0; intI < types.Length; intI++)
-				comboBox.Items.Add(types.GetValue(intI));
+			for (int i = 1; i < types.Length; i++) //start at 1 so we don't add the Reserved type/class
+				comboBox.Items.Add(types.GetValue(i));
 			comboBox.SelectedIndex = 0;
 		}
 
