@@ -1,0 +1,17 @@
+Thumbs.db
+*.user
+*.opensdf
+*.sdf
+*.suo
+*.ncb
+*.sln.docstates
+*.bak
+*.cache
+*.vsp
+*.vsmdi
+/ipch
+[Tt]est[Rr]esult*
+[Bb]in*/
+[Oo]bj/
+[Dd]ebug*/
+[Rr]elease*/
