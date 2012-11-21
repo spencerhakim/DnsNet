@@ -303,7 +303,7 @@ namespace Heijden.DNS
 			}
 
 			int TimeLived = (int)((DateTime.Now.Ticks - response.TimeStamp.Ticks) / TimeSpan.TicksPerSecond);
-			foreach (RR rr in response.RecordsRR)
+			foreach (RR rr in response.ResourceRecords)
 			{
 				rr.TimeLived = TimeLived;
 				// The TTL property calculates its actual time to live
